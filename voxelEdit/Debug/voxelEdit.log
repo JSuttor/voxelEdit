@@ -1,0 +1,15 @@
+﻿  Application.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+F:\projects\voxelEdit\voxelEdit\Dependencies\GLFW\include\GLFW\glfw3.h(123): message : see previous definition of 'APIENTRY'
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\camera.h(46,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\camera.h(47,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\camera.h(51,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\camera.h(52,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\camera.h(53,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\camera.h(54,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\Application.cpp(57,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\Application.cpp(73,36): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\Application.cpp(73,33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxelEdit\voxelEdit\voxelEdit\src\Application.cpp(73,30): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+LINK : warning LNK4044: unrecognized option '/lglut'; ignored
+  voxelEdit.vcxproj -> F:\projects\voxelEdit\voxelEdit\Debug\voxelEdit.exe
