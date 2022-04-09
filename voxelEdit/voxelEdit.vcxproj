@@ -156,13 +156,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Block.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Block.h" />
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Chunk.h" />
+    <ClInclude Include="src\Editor.h" />
+    <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\EditorGrid.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
