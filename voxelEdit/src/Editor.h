@@ -4,23 +4,25 @@
 #include <math.h>
 #include <gl/GLU.h>
 #include <glm/glm.hpp>
-#include "camera.h"
+#include "controls.h"
 #include "object.h"
 #include "block.h"
 #include "editorgrid.h"
 
 void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, float deltaTime);
+int editorSizeX = 16;
+int editorSizeY = 16;
+int editorSizeZ = 16;
 
-Object currentOb;
+short blockType;
 
 void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, float deltaTime) {
     if (!currentOb.init) {
-        currentOb = fillObject(currentOb);
+        getObjectFromFile(0, "thingy", currentOb, editorSizeX, editorSizeY, editorSizeZ);
         currentOb.init = true;
     }
 
-    processEditorInput(window, deltaTime, gameState);
-
+    processEditorInput(window, deltaTime, blockType);
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -29,15 +31,11 @@ void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, flo
 
     changeCamera();
 
+    dispObject(currentOb, 1, 1, 1);
+    mouseEditHover(window, screenHeight, currentOb);
 
-    dispObject(currentOb);
-    mouseHover(window, screenHeight);
-
-
-    int size = 16;
     float edgeLength = 1.0f;
-    drawGrid(size, edgeLength);
-
+    drawGrid(editorSizeX, editorSizeY, editorSizeZ, edgeLength, 1, 1, 1);
 
     glPopMatrix();
 
@@ -46,4 +44,12 @@ void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, flo
 
     // Poll for and process events
     glfwPollEvents();
+}
+
+void saveObject() {
+
+}
+
+void loadObject() {
+
 }

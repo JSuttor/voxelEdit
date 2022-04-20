@@ -5,14 +5,14 @@
 #include <gl/GLU.h>
 #include <glm/glm.hpp>
 
-#define red 0.1f
-#define green 0.1f
-#define blue 0.1f
-#define opacity 0.5f
+#define gred 0.1f
+#define ggreen 0.1f
+#define gblue 0.1f
+#define gopacity 0.5f
 
-void drawGrid(int size, float edgeLength);
+void drawGrid(int xSize, int ySize, int zSize, float edgeLength, int startX, int startY, int startZ);
 
-void drawGrid(int size, float edgeLength) {
+void drawGrid(int xSize, int ySize, int zSize, float edgeLength, int startX, int startY, int startZ) {
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
@@ -20,18 +20,17 @@ void drawGrid(int size, float edgeLength) {
     int x = 0, y = 0, z = 0;
     
     //draw horizontal lines across x axis
-    for (int x = 0; x < size; x++) {
-        for (int y = -1; y < size; y++) {
-            for (int z = -1; z < size; z++) {
+    for (int x = 0; x < xSize; x++) {
+        for (int y = -1; y < ySize; y++) {
+            for (int z = -1; z < zSize; z++) {
                 GLfloat vertices[] =
                 {
-                    x - halfSideLength, y + halfSideLength, z + halfSideLength,
-                    x + halfSideLength, y + halfSideLength, z + halfSideLength,
-
+                    x - halfSideLength + startX, y + halfSideLength + startY, z + halfSideLength + startZ,
+                    x + halfSideLength + startX, y + halfSideLength + startY, z + halfSideLength + startZ,
 
                 };
                 glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-                glColor4f(red, green, blue, opacity);
+                glColor4f(gred, ggreen, gblue, gopacity);
                 glEnableClientState(GL_VERTEX_ARRAY);
                 glVertexPointer(3, GL_FLOAT, 0, vertices);
 
@@ -42,18 +41,18 @@ void drawGrid(int size, float edgeLength) {
     }
     
     //draw vertical lines
-    for (int x = -1; x < size; x++) {
-        for (int y = 0; y < size; y++) {
-            for (int z = -1; z < size; z++) {
+    for (int x = -1; x < xSize; x++) {
+        for (int y = 0; y < ySize; y++) {
+            for (int z = -1; z < zSize; z++) {
                 GLfloat vertices[] =
                 {
-                    x + halfSideLength, y - halfSideLength, z + halfSideLength,
-                    x + halfSideLength, y + halfSideLength, z + halfSideLength,
+                    x + halfSideLength + startX, y - halfSideLength + startY, z + halfSideLength + startZ,
+                    x + halfSideLength + startX, y + halfSideLength + startY, z + halfSideLength + startZ,
 
 
                 };
                 glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-                glColor4f(red, green, blue, opacity);
+                glColor4f(gred, ggreen, gblue, gopacity);
                 glEnableClientState(GL_VERTEX_ARRAY);
                 glVertexPointer(3, GL_FLOAT, 0, vertices);
 
@@ -64,18 +63,16 @@ void drawGrid(int size, float edgeLength) {
     }
 
     //draw horizontal lines across z axis
-    for (int x = -1; x < size; x++) {
-        for (int y = -1; y < size; y++) {
-            for (int z = 0; z < size; z++) {
+    for (int x = -1; x < xSize; x++) {
+        for (int y = -1; y < ySize; y++) {
+            for (int z = 0; z < zSize; z++) {
                 GLfloat vertices[] =
                 {
-                    x + halfSideLength, y + halfSideLength, z - halfSideLength,
-                    x + halfSideLength, y + halfSideLength, z + halfSideLength,
-
-
+                    x + halfSideLength + startX, y + halfSideLength + startY, z - halfSideLength + startZ,
+                    x + halfSideLength + startX, y + halfSideLength + startY, z + halfSideLength + startZ,
                 };
                 glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-                glColor4f(red, green, blue, opacity);
+                glColor4f(gred, ggreen, gblue, gopacity);
                 glEnableClientState(GL_VERTEX_ARRAY);
                 glVertexPointer(3, GL_FLOAT, 0, vertices);
 

@@ -3,16 +3,18 @@
 #include <math.h>
 #include <gl/GLU.h>
 #include <glm/glm.hpp>
-#include "camera.h"
+#include "controls.h"
 #include "object.h"
 #include "block.h"
 #include "editorgrid.h"
 #include "editor.h"
+#include "mainmenu.h"
+#include "EditorMenu.h"
+#include "EditorLoadMenu.h"
+
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
 #define FOV 60.0
-
-std::string gameState = "editor";
 
 GLfloat rotateY = 0;
 GLfloat rotateX = 0;
@@ -31,7 +33,7 @@ int main(void)
     // Create a windowed mode window and its OpenGL context
     window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "voxelEdit", NULL, NULL);
 
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     glfwSetCursorPosCallback(window, mouse_callback);
 
     glfwMakeContextCurrent(window);
@@ -67,15 +69,23 @@ int main(void)
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
-        if (gameState == "editor") {
+        if (gameState == "main_menu") {
+            mainMenuLoop(window);
+        }
+        else if (gameState == "editor_menu") {
+            editorMenuLoop(window);
+        }
+        else if (gameState == "editor_load_menu") {
+            editorLoadMenuLoop(window);
+        }
+        else if (gameState == "editor") {
             editorLoop(window, gameState, screenHeight, deltaTime);
         }
     }
+
 
     glfwTerminate();
 
     return 0;
 }
-
-//editor
 
