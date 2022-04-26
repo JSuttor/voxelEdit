@@ -14,11 +14,11 @@ int editorSizeX = 16;
 int editorSizeY = 16;
 int editorSizeZ = 16;
 
-short blockType;
+short blockType = 1;
 
 void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, float deltaTime) {
     if (!currentOb.init) {
-        getObjectFromFile(0, "thingy", currentOb, editorSizeX, editorSizeY, editorSizeZ);
+        getObjectFromFile(0, "Assets/MenuButtons/LeftButton", currentOb, editorSizeX, editorSizeY, editorSizeZ);
         currentOb.init = true;
     }
 
@@ -31,8 +31,8 @@ void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, flo
 
     changeCamera();
 
-    dispObject(currentOb, 1, 1, 1);
-    mouseEditHover(window, screenHeight, currentOb);
+    dispObject(currentOb, 1, 1, 1, true);
+    mouseEditHover(window, screenHeight, currentOb, blockType);
 
     float edgeLength = 1.0f;
     drawGrid(editorSizeX, editorSizeY, editorSizeZ, edgeLength, 1, 1, 1);
@@ -44,12 +44,4 @@ void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, flo
 
     // Poll for and process events
     glfwPollEvents();
-}
-
-void saveObject() {
-
-}
-
-void loadObject() {
-
 }

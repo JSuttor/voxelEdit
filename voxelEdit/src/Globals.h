@@ -19,9 +19,6 @@ void changeState(std::string newGameState, GLFWwindow* window) {
     if (gameState == "editor_menu") {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     }
-    if (gameState == "editor_load_menu") {
-        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-    }
 }
 int getScreenHeight() {
     return screenHeight;

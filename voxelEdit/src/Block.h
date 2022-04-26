@@ -20,9 +20,14 @@ struct typeEntry {
 
 typeEntry typeTable[65536] = {
     {}, //nothing
-    {100, 100, 100, 255}, //dirt
-    {200, 200, 200, 255}, //grass
-    {}, //stone
+    {150, 150, 150, 255}, //stone
+    {180, 180, 180, 255}, //stoneLight
+    {55, 191, 69, 255}, //grass
+    {100, 227, 113, 255}, //grassLight
+    {140, 90, 52, 255}, //dirt
+    {173, 120, 80, 255}, //dirtLight
+    {73, 163, 242, 255}, //sky
+    {131, 193, 247, 255}, //skyLight
     {}, //glass
 };
 
@@ -33,6 +38,7 @@ void drawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPosZ, Block 
 {
     GLfloat halfSideLength = size / 100.0f * 0.5f;
 
+    //define all faces as sets of 2 triangles
     GLfloat vertices[] =
     {
         // front face
@@ -93,10 +99,12 @@ void drawCube(GLfloat centerPosX, GLfloat centerPosY, GLfloat centerPosZ, Block 
 
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
+    //lookup cube type for color and opacity info
     typeEntry blockType = typeLookup(dispCube.type);
 
     byte alpha = blockType.alpha;
     if (hover) {
+        //show half opacity for editor unplaced blocks
         alpha /= 2;
     }
 

@@ -16,10 +16,13 @@ void changeCamera();
 void processEditorInput(GLFWwindow* window, float delta, short& editorBlockType);
 void processMenuInput(GLFWwindow* window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void mouseEditHover(GLFWwindow* window, int screenHeight, Object& currentOb, short blockType);
 void editorMouseCallback(GLFWwindow* window, double xPos, double yPos);
-//void menuMouseCallback(GLFWwindow* window, double xPos, double yPos);
 void detectButtonInteract(MenuButton& button, GLFWwindow* window);
 bool firstCtrl = true;
+bool firstClickMenu = true;
+bool firstClickEditor = true;
+bool firstRightClickEditor = true;
 
 // Defines several possible options for camera movement. Used as abstraction to stay away from window-system specific input methods
 
@@ -56,21 +59,21 @@ void processEditorInput(GLFWwindow* window, float delta, short &editorBlockType)
     if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
         editorBlockType = 1;
     if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
-        editorBlockType = 2;
-    if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
         editorBlockType = 3;
-    if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS)
-        editorBlockType = 4;
-    if (glfwGetKey(window, GLFW_KEY_5) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
         editorBlockType = 5;
-    if (glfwGetKey(window, GLFW_KEY_6) == GLFW_PRESS)
-        editorBlockType = 6;
-    if (glfwGetKey(window, GLFW_KEY_7) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS)
         editorBlockType = 7;
-    if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS)
-        editorBlockType = 8;
-    if (glfwGetKey(window, GLFW_KEY_9) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_5) == GLFW_PRESS)
         editorBlockType = 9;
+    if (glfwGetKey(window, GLFW_KEY_6) == GLFW_PRESS)
+        editorBlockType = 11;
+    if (glfwGetKey(window, GLFW_KEY_7) == GLFW_PRESS)
+        editorBlockType = 13;
+    if (glfwGetKey(window, GLFW_KEY_8) == GLFW_PRESS)
+        editorBlockType = 15;
+    if (glfwGetKey(window, GLFW_KEY_9) == GLFW_PRESS)
+        editorBlockType = 17;
 
     if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS) {
         std::string name = "";
@@ -159,7 +162,7 @@ void editorMouseCallback(GLFWwindow* window, double xPos, double yPos) {
         cameraFront = glm::normalize(direction);
     }
 }
-void mouseEditHover(GLFWwindow* window, int screenHeight, Object currentOb) {
+void mouseEditHover(GLFWwindow* window, int screenHeight, Object& currentOb, short blockType) {
     if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
 
         double mouseX, mouseY;
@@ -181,11 +184,23 @@ void mouseEditHover(GLFWwindow* window, int screenHeight, Object currentOb) {
         GLdouble x, y, z;
         gluUnProject(mouseX, mouseY, z_cursor, modelview, projection, viewport, &x, &y, &z);
 
+        bool click = (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS);
+        bool rightClick = (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS);
+
         //std::cout << z_cursor << " " << x << " " << y << " " << z << std::endl;
-        editorHoverBlock(currentOb, x, y, z, z_cursor, 1, 1, 1);
-
-
-
+        editorHoverBlock(currentOb, x, y, z, z_cursor, 1, 1, 1, blockType, click && firstClickEditor, rightClick && firstRightClickEditor);
+    }
+    if (!(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)) {
+        firstClickEditor = true;
+    }
+    else{
+        firstClickEditor = false;
+    }
+    if (!(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)) {
+        firstRightClickEditor = true;
+    }
+    else {
+        firstRightClickEditor = false;
     }
 }
 
@@ -196,9 +211,9 @@ void detectButtonInteract(MenuButton &button, GLFWwindow* window) {
     int endY = 0;
 
     startX = button.position.x-1;
-    endX = startX + (64.0 * button.buttonObject.blockSize / 100.0) + 2.0;
+    endX = startX + ((sizeof(button.buttonObject.blockStore)/sizeof(button.buttonObject.blockStore[0])) * button.buttonObject.blockSize / 100.0) + 2.0;
     startY = button.position.y-1;
-    endY = startY + (32.0 * button.buttonObject.blockSize / 100.0) + 2.0;
+    endY = startY + ((sizeof(button.buttonObject.blockStore[0]) / sizeof(button.buttonObject.blockStore[0][0])) * button.buttonObject.blockSize / 100.0) + 2.0;
 
     double mouseX, mouseY;
     glfwGetCursorPos(window, &mouseX, &mouseY);
@@ -221,13 +236,26 @@ void detectButtonInteract(MenuButton &button, GLFWwindow* window) {
 
     if (x >= startX && x <= endX && y >= startY && y <= endY && z_cursor >= 0.0 && z_cursor < 1.0) {
         //do hover
-        //buttonHover(button);
+        if (!button.isHover) {
+            buttonHover(button);
+            button.isHover = true;
+        }
             
-        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
+        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS && firstClickMenu) {
             button.func(window);
         }  
     }
     else {
-        //buttonUnhover(button);
+        if (button.isHover) {
+            buttonUnhover(button);
+            button.isHover = false;
+        }
+    }
+
+    if (!(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)) {
+        firstClickMenu = true;
+    }
+    else if(button.isHover) {
+        firstClickMenu = false;
     }
 }

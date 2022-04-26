@@ -21,6 +21,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Assets\MenuButtons\BackButton.oof" />
+    <None Include="Assets\MenuButtons\DeleteButton.oof" />
+    <None Include="Assets\MenuButtons\EditorButton.oof" />
+    <None Include="Assets\MenuButtons\ExitButton.oof" />
+    <None Include="Assets\MenuButtons\LeftButton.oof" />
+    <None Include="Assets\MenuButtons\LoadButton.oof" />
+    <None Include="Assets\MenuButtons\NewButton.oof" />
+    <None Include="Assets\MenuButtons\RightButton.oof" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Block.h">
@@ -51,9 +59,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\EditorMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\EditorLoadMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ObjectListItem.h">

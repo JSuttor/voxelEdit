@@ -93,6 +93,7 @@
       </AdditionalHeaderUnitDependencies>
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,6 +159,14 @@
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MenuButtons\BackButton.oof" />
+    <None Include="Assets\MenuButtons\DeleteButton.oof" />
+    <None Include="Assets\MenuButtons\EditorButton.oof" />
+    <None Include="Assets\MenuButtons\ExitButton.oof" />
+    <None Include="Assets\MenuButtons\LeftButton.oof" />
+    <None Include="Assets\MenuButtons\LoadButton.oof" />
+    <None Include="Assets\MenuButtons\NewButton.oof" />
+    <None Include="Assets\MenuButtons\RightButton.oof" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +174,6 @@
     <ClInclude Include="src\Controls.h" />
     <ClInclude Include="src\Chunk.h" />
     <ClInclude Include="src\Editor.h" />
-    <ClInclude Include="src\EditorLoadMenu.h" />
     <ClInclude Include="src\EditorMenu.h" />
     <ClInclude Include="src\Globals.h" />
     <ClInclude Include="src\MainMenu.h" />

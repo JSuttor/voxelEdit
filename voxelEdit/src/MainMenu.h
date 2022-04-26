@@ -27,11 +27,10 @@ void mainMenuLoop(GLFWwindow* window) {
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // Render OpenGL here
     glPushMatrix();
 
-    //here
     for (int i = 0; i < mainButtonNum; i++) {
+        //display buttons and handle potential interaction
         dispButton(mainButtonArr[i]);
         detectButtonInteract(mainButtonArr[i], window);
     }
@@ -46,16 +45,17 @@ void mainMenuLoop(GLFWwindow* window) {
 }
 
 void initMainMenu() {
+    //create buttons here
 
-    mainButtonArr[0].position = glm::vec3(-20, 0.0, -30);
+    mainButtonArr[0].position = glm::vec3(-18, 0.0, -25);
     mainButtonArr[0].clickable = true;
     mainButtonArr[0].func = *editorMenuButtonClick;
-    getObjectFromFile(0, "EditorButton", mainButtonArr[0].buttonObject);
+    getObjectFromFile(0, "Assets/MenuButtons/EditorButton.oof", mainButtonArr[0].buttonObject);
 
-    mainButtonArr[1].position = glm::vec3(-20, -10.0, -30);
+    mainButtonArr[1].position = glm::vec3(-18, -8.0, -25);
     mainButtonArr[1].clickable = true;
     mainButtonArr[1].func = *exitButtonClick;
-    getObjectFromFile(0, "ExitButton", mainButtonArr[1].buttonObject);
+    getObjectFromFile(0, "Assets/MenuButtons/ExitButton.oof", mainButtonArr[1].buttonObject);
 }
 
 void editorMenuButtonClick(GLFWwindow* window) {
@@ -63,6 +63,7 @@ void editorMenuButtonClick(GLFWwindow* window) {
 }
 
 void exitButtonClick(GLFWwindow* window) {
+    //exit game
     glfwDestroyWindow(window);
     glfwTerminate();
 }

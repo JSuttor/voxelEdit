@@ -1,67 +1,69 @@
 ﻿  Application.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 F:\projects\voxel_game\voxelEdit\Dependencies\GLFW\include\GLFW\glfw3.h(123): message : see previous definition of 'APIENTRY'
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(151,12): warning C4244: 'initializing': conversion from 'short' to 'char', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(173,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(174,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(175,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(184,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(185,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(188,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(192,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(192,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(192,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(195,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(199,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(199,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(199,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(206,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(207,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(209,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(213,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(213,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(213,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(216,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(220,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(220,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(220,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(227,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(228,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(230,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(234,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(234,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(234,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(237,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(241,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(241,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(241,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(159,12): warning C4244: 'initializing': conversion from 'short' to 'char', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(182,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(183,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(184,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(198,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(199,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(203,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(209,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(209,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(209,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(225,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(231,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(231,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(231,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(250,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(251,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(254,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(260,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(260,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(260,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(276,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(282,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(282,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(282,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(301,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(302,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(305,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(311,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(311,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(311,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(327,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(333,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(333,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Object.h(333,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
 F:\projects\voxel_game\voxelEdit\voxelEdit\src\MenuButton.h(22,59): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 F:\projects\voxel_game\voxelEdit\voxelEdit\src\MenuButton.h(21,59): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 F:\projects\voxel_game\voxelEdit\voxelEdit\src\MenuButton.h(20,66): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(133,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(134,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(138,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(139,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(140,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(141,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(178,30): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(178,22): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(198,31): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(136,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(137,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(141,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(142,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(143,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(144,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(181,30): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(181,22): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(213,31): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(199,68): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(200,31): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(214,146): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(215,31): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(201,68): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(216,26): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(216,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-F:\projects\voxel_game\voxelEdit\voxelEdit\src\Application.cpp(68,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(216,154): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(231,26): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\controls.h(231,18): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\ObjectListItem.h(33,107): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\ObjectListItem.h(33,73): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\ObjectListItem.h(33,39): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\EditorMenu.h(143,27): warning C4018: '<': signed/unsigned mismatch
+F:\projects\voxel_game\voxelEdit\voxelEdit\src\Application.cpp(64,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 LINK : warning LNK4044: unrecognized option '/lglut'; ignored
-LINK : warning LNK4044: unrecognized option '/lglut'; ignored
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   voxelEdit.vcxproj -> F:\projects\voxel_game\voxelEdit\Debug\voxelEdit.exe
