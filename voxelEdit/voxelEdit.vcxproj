@@ -170,17 +170,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Block.h" />
-    <ClInclude Include="src\Controls.h" />
-    <ClInclude Include="src\Chunk.h" />
-    <ClInclude Include="src\Editor.h" />
-    <ClInclude Include="src\EditorMenu.h" />
+    <ClInclude Include="src\editor\EditorControls.h" />
+    <ClInclude Include="src\engine\types\Block.h" />
+    <ClInclude Include="src\engine\util\Controls.h" />
+    <ClInclude Include="src\engine\types\Chunk.h" />
+    <ClInclude Include="src\editor\Editor.h" />
+    <ClInclude Include="src\engine\util\FileIO.h" />
+    <ClInclude Include="src\menus\EditorMenu.h" />
     <ClInclude Include="src\Globals.h" />
-    <ClInclude Include="src\MainMenu.h" />
-    <ClInclude Include="src\MenuButton.h" />
-    <ClInclude Include="src\Object.h" />
-    <ClInclude Include="src\EditorGrid.h" />
-    <ClInclude Include="src\ObjectListItem.h" />
+    <ClInclude Include="src\menus\MainMenu.h" />
+    <ClInclude Include="src\engine\types\MenuButton.h" />
+    <ClInclude Include="src\engine\types\Object.h" />
+    <ClInclude Include="src\editor\EditorGrid.h" />
+    <ClInclude Include="src\menus\MenuControls.h" />
+    <ClInclude Include="src\menus\ObjectListItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

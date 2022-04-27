@@ -31,37 +31,46 @@
     <None Include="Assets\MenuButtons\RightButton.oof" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Block.h">
+    <ClInclude Include="src\engine\types\Block.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\EditorGrid.h">
+    <ClInclude Include="src\editor\EditorGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Object.h">
+    <ClInclude Include="src\engine\types\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Chunk.h">
+    <ClInclude Include="src\engine\types\Chunk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Editor.h">
+    <ClInclude Include="src\editor\Editor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Controls.h">
+    <ClInclude Include="src\engine\util\Controls.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MenuButton.h">
+    <ClInclude Include="src\engine\types\MenuButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MainMenu.h">
+    <ClInclude Include="src\menus\MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\EditorMenu.h">
+    <ClInclude Include="src\menus\EditorMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ObjectListItem.h">
+    <ClInclude Include="src\menus\ObjectListItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\editor\EditorControls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\menus\MenuControls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\util\FileIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
