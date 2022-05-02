@@ -30,7 +30,7 @@ void mainMenuLoop(GLFWwindow* window) {
 
     for (int i = 0; i < mainButtonNum; i++) {
         //display buttons and handle potential interaction
-        dispButton(mainButtonArr[i]);
+        mainButtonArr[i].dispButton();
         detectButtonInteract(mainButtonArr[i], window);
     }
 

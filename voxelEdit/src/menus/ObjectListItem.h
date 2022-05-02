@@ -30,8 +30,7 @@ void dispItem(ObjectListItem item, int startX, int startY, int startZ) {
 		for (int y = 0; y < ySize; y++) {
 			for (int z = 0; z < zSize; z++) {
 				if (item.obj.blockStore[x][y][z].type != 0) {
-					drawCube((float)x * size / 100.0 + startX, (float)y * size / 100.0 + startY, (float)z * size / 100.0 + startZ, //position
-						item.obj.blockStore[x][y][z], size); //color
+					item.obj.blockStore[x][y][z].drawCube((float)x * size / 100.0 + startX, (float)y * size / 100.0 + startY, (float)z * size / 100.0 + startZ, size);
 				}
 			}
 		}

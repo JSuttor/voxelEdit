@@ -50,7 +50,7 @@ void editorMenuLoop(GLFWwindow* window) {
 
     //here
     for (int i = 0; i < editButtonNum; i++) {
-        dispButton(editButtonArr[i]);
+        editButtonArr[i].dispButton();
         detectButtonInteract(editButtonArr[i], window);
     }
     displayItems();
@@ -130,7 +130,9 @@ void displayItems() {
         for (int j = 0; j < 4; j++) {
             x = i * 6 - 4;
             y = j * 6 - 8;
-            dispItem(currentItems[index], x, y, z);
+            if (currentItems[index].obj.init) {
+                dispItem(currentItems[index], x, y, z);
+            }
             index++;
         }
     }
@@ -144,7 +146,7 @@ void getItemsFromDir() {
             currentItems[i].func = *setCurrentObject;
         }
         else {
-            currentItems[i].obj = {};
+            currentItems[i].obj.init = false;
         }
     }
 }

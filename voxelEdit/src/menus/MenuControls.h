@@ -43,7 +43,7 @@ void detectButtonInteract(MenuButton& button, GLFWwindow* window) {
     if (x >= startX && x <= endX && y >= startY && y <= endY && z_cursor >= 0.0 && z_cursor < 1.0) {
         //do hover
         if (!button.isHover) {
-            buttonHover(button);
+            button.buttonHover();
             button.isHover = true;
         }
 
@@ -55,7 +55,7 @@ void detectButtonInteract(MenuButton& button, GLFWwindow* window) {
     else {
         //unhover
         if (button.isHover) {
-            buttonUnhover(button);
+            button.buttonUnhover();
             button.isHover = false;
         }
     }

@@ -29,10 +29,10 @@ void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, flo
     // Render OpenGL here
     glPushMatrix();
 
-    changeCamera();
+    Camera::getInstance().changeCamera();
 
     //display currently selected object
-    dispObject(currentOb, 1, 1, 1, true);
+    currentOb.dispObject( 1, 1, 1, true);
     mouseEditHover(window, screenHeight, currentOb, blockType);
 
     float edgeLength = 1.0f;

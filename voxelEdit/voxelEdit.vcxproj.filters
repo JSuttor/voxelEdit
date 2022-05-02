@@ -46,7 +46,7 @@
     <ClInclude Include="src\editor\Editor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engine\util\Controls.h">
+    <ClInclude Include="src\engine\util\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Globals.h">

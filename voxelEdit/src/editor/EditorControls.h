@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 #include "../Globals.h"
 #include "../engine/types/Object.h"
-#include "../engine/util/Controls.h"
+#include "../engine/util/Camera.h"
 #include "../engine/util/FileIO.h"
 
 void processEditorInput(GLFWwindow* window, float delta, short& editorBlockType, Object currentOb);
@@ -16,17 +16,19 @@ bool firstRightClickEditor = true;
 
 void processEditorInput(GLFWwindow* window, float delta, short& editorBlockType, Object currentOb)
 {
+    Camera * cam = &Camera::getInstance();
+
     float cameraSpeed = 10.0f * delta;
 
     //basic movement
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        cameraPos += cameraSpeed * cameraFront;
+        cam->cameraPos += cameraSpeed * cam->cameraFront;
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        cameraPos -= cameraSpeed * cameraFront;
+        cam->cameraPos -= cameraSpeed * cam->cameraFront;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cam->cameraPos -= glm::normalize(glm::cross(cam->cameraFront, cam->cameraUp)) * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cam->cameraPos += glm::normalize(glm::cross(cam->cameraFront, cam->cameraUp)) * cameraSpeed;
 
     //change block type placing TEMPORARY
     if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
@@ -76,20 +78,22 @@ void processEditorInput(GLFWwindow* window, float delta, short& editorBlockType,
 }
 
 void editorMouseCallback(GLFWwindow* window, double xPos, double yPos) {
+    Camera* cam = &Camera::getInstance();
+
     if (!(glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)) {
         //if control isn't held
         if (firstMouse)
         {
-            lastX = xPos;
-            lastY = yPos;
+            cam->lastX = xPos;
+            cam->lastY = yPos;
             firstMouse = false;
         }
 
         //detect amount of mouse movement since last frame
-        float xoffset = xPos - lastX;
-        float yoffset = lastY - yPos;
-        lastX = xPos;
-        lastY = yPos;
+        float xoffset = xPos - cam->lastX;
+        float yoffset = cam->lastY - yPos;
+        cam->lastX = xPos;
+        cam->lastY = yPos;
 
         //mouse movement sensitivity (we'll adjust it in a settings menu later)
         float sensitivity = 0.1f;
@@ -97,21 +101,21 @@ void editorMouseCallback(GLFWwindow* window, double xPos, double yPos) {
         yoffset *= sensitivity;
 
         //yaw is left/right, pitch is up/down
-        yaw += xoffset;
-        pitch += yoffset;
+        cam->yaw += xoffset;
+        cam->pitch += yoffset;
 
         //you shouldn't be able to look up or down beyond vertical and end up upside down
-        if (pitch > 89.0f)
-            pitch = 89.0f;
-        if (pitch < -89.0f)
-            pitch = -89.0f;
+        if (cam->pitch > 89.0f)
+            cam->pitch = 89.0f;
+        if (cam->pitch < -89.0f)
+            cam->pitch = -89.0f;
 
         //calc direction from pitch and yaw
         glm::vec3 direction;
-        direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-        direction.y = sin(glm::radians(pitch));
-        direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-        cameraFront = glm::normalize(direction);
+        direction.x = cos(glm::radians(cam->yaw)) * cos(glm::radians(cam->pitch));
+        direction.y = sin(glm::radians(cam->pitch));
+        direction.z = sin(glm::radians(cam->yaw)) * cos(glm::radians(cam->pitch));
+        cam->cameraFront = glm::normalize(direction);
     }
 }
 
@@ -142,7 +146,7 @@ void mouseEditHover(GLFWwindow* window, int screenHeight, Object& currentOb, sho
         bool rightClick = (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS);
 
         //std::cout << z_cursor << " " << x << " " << y << " " << z << std::endl;
-        editorHoverBlock(currentOb, x, y, z, z_cursor, 1, 1, 1, blockType, click && firstClickEditor, rightClick && firstRightClickEditor);
+        currentOb.editorHoverBlock(x, y, z, z_cursor, 1, 1, 1, blockType, click && firstClickEditor, rightClick && firstRightClickEditor);
     }
     if (!(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)) {
         //just clicked

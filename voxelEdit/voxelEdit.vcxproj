@@ -172,7 +172,7 @@
   <ItemGroup>
     <ClInclude Include="src\editor\EditorControls.h" />
     <ClInclude Include="src\engine\types\Block.h" />
-    <ClInclude Include="src\engine\util\Controls.h" />
+    <ClInclude Include="src\engine\util\Camera.h" />
     <ClInclude Include="src\engine\types\Chunk.h" />
     <ClInclude Include="src\editor\Editor.h" />
     <ClInclude Include="src\engine\util\FileIO.h" />

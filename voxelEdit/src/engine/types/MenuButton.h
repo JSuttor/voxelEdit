@@ -3,50 +3,54 @@
 #include "Block.h"
 #include "Object.h"
 
-struct MenuButton {
+class MenuButton {
+public:
 	glm::vec3 position = glm::vec3(0.0, 0.0, 0.0);
 	Object buttonObject;
 	bool clickable = true;
 	void(*func)(GLFWwindow* window);
 	bool isHover = false;
-};
 
-void dispButton(MenuButton button){
-	//display each cube of button
-	for (int x = 0; x < (sizeof(button.buttonObject.blockStore)/sizeof(button.buttonObject.blockStore[0])); x++) {
-		for (int y = 0; y < (sizeof(button.buttonObject.blockStore[0]) / sizeof(button.buttonObject.blockStore[0][0])); y++) {
-			for (int z = 0; z < (sizeof(button.buttonObject.blockStore[0][0]) / sizeof(button.buttonObject.blockStore[0][0][0])); z++) {
-				if (button.buttonObject.blockStore[x][y][z].type != 0) {
-					drawCube(	(x * button.buttonObject.blockSize /100.0) + button.position.x,
-								(y * button.buttonObject.blockSize /100.0) + button.position.y,
-								(z * button.buttonObject.blockSize /100.0) + button.position.z,
-								button.buttonObject.blockStore[x][y][z], button.buttonObject.blockSize);
+	MenuButton() {};
+
+	void dispButton() {
+		//display each cube of button
+		for (int x = 0; x < (sizeof(buttonObject.blockStore) / sizeof(buttonObject.blockStore[0])); x++) {
+			for (int y = 0; y < (sizeof(buttonObject.blockStore[0]) / sizeof(buttonObject.blockStore[0][0])); y++) {
+				for (int z = 0; z < (sizeof(buttonObject.blockStore[0][0]) / sizeof(buttonObject.blockStore[0][0][0])); z++) {
+					if (buttonObject.blockStore[x][y][z].type != 0) {
+						buttonObject.blockStore[x][y][z].drawCube((x * buttonObject.blockSize / 100.0) + position.x,
+							(y * buttonObject.blockSize / 100.0) + position.y,
+							(z * buttonObject.blockSize / 100.0) + position.z,
+							buttonObject.blockSize);
+					}
 				}
 			}
 		}
 	}
-}
 
-void buttonHover(MenuButton& button) {
-	//switch to lighter version of each block
-	for (int x = 0; x < (sizeof(button.buttonObject.blockStore) / sizeof(button.buttonObject.blockStore[0])); x++) {
-		for (int y = 0; y < (sizeof(button.buttonObject.blockStore[0]) / sizeof(button.buttonObject.blockStore[0][0])); y++) {
-			for (int z = 0; z < (sizeof(button.buttonObject.blockStore[0][0]) / sizeof(button.buttonObject.blockStore[0][0][0])); z++) {
-				if (button.buttonObject.blockStore[x][y][z].type != 0)
-					button.buttonObject.blockStore[x][y][z].type++;
+	void buttonHover() {
+		//switch to lighter version of each block
+		for (int x = 0; x < (sizeof(buttonObject.blockStore) / sizeof(buttonObject.blockStore[0])); x++) {
+			for (int y = 0; y < (sizeof(buttonObject.blockStore[0]) / sizeof(buttonObject.blockStore[0][0])); y++) {
+				for (int z = 0; z < (sizeof(buttonObject.blockStore[0][0]) / sizeof(buttonObject.blockStore[0][0][0])); z++) {
+					if (buttonObject.blockStore[x][y][z].type != 0)
+						buttonObject.blockStore[x][y][z].type++;
+				}
 			}
 		}
 	}
-}
 
-void buttonUnhover(MenuButton & button) {
-	//switch back to normal version of each block
-	for (int x = 0; x < (sizeof(button.buttonObject.blockStore) / sizeof(button.buttonObject.blockStore[0])); x++) {
-		for (int y = 0; y < (sizeof(button.buttonObject.blockStore[0]) / sizeof(button.buttonObject.blockStore[0][0])); y++) {
-			for (int z = 0; z < (sizeof(button.buttonObject.blockStore[0][0]) / sizeof(button.buttonObject.blockStore[0][0][0])); z++) {
-				if(button.buttonObject.blockStore[x][y][z].type != 0)
-					button.buttonObject.blockStore[x][y][z].type--;
+	void buttonUnhover() {
+		//switch back to normal version of each block
+		for (int x = 0; x < (sizeof(buttonObject.blockStore) / sizeof(buttonObject.blockStore[0])); x++) {
+			for (int y = 0; y < (sizeof(buttonObject.blockStore[0]) / sizeof(buttonObject.blockStore[0][0])); y++) {
+				for (int z = 0; z < (sizeof(buttonObject.blockStore[0][0]) / sizeof(buttonObject.blockStore[0][0][0])); z++) {
+					if (buttonObject.blockStore[x][y][z].type != 0)
+						buttonObject.blockStore[x][y][z].type--;
+				}
 			}
 		}
 	}
-}
+};
+

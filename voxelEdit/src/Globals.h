@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
 #include "engine/types/Object.h"
-#include "engine/util/Controls.h"
 #include "editor/EditorControls.h"
 
 std::string gameState = "main_menu";
 int screenHeight = 720;
 Object currentOb;
+void genericMouseCallback(GLFWwindow* window, double xpos, double ypos) {};
 
 std::string getGameState() {
     return gameState;
