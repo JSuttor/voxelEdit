@@ -8,7 +8,7 @@
 #define gred 0.1f
 #define ggreen 0.1f
 #define gblue 0.1f
-#define gopacity 0.5f
+#define gopacity 0.2f
 
 void drawGrid(int xSize, int ySize, int zSize, float edgeLength, int startX, int startY, int startZ);
 

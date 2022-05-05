@@ -4,6 +4,7 @@
 #include <math.h>
 #include <gl/GLU.h>
 #include <glm/glm.hpp>
+#include "../engine/util/Camera.h"
 #include "../Globals.h"
 #include "editorgrid.h"
 
@@ -17,7 +18,7 @@ short blockType = 1;
 void editorLoop(GLFWwindow* window, std::string gameState, int screenHeight, float deltaTime) {
     if (!currentOb.init) {
         //if no selected object, grab default object
-        getObjectFromFile(0, "Assets/MenuButtons/LeftButton", currentOb, editorSizeX, editorSizeY, editorSizeZ);
+        currentOb.getObjectFromFile("Assets/MenuButtons/LeftButton.oof", editorSizeX, editorSizeY, editorSizeZ);
         currentOb.init = true;
     }
 

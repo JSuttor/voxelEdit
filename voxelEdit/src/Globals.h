@@ -8,6 +8,8 @@ int screenHeight = 720;
 Object currentOb;
 void genericMouseCallback(GLFWwindow* window, double xpos, double ypos) {};
 
+extern void editorMouseCallback(GLFWwindow* window, double xPos, double yPos);
+
 std::string getGameState() {
     return gameState;
 }

@@ -3,6 +3,7 @@
 #include <gl/GLU.h>
 #include <glm/glm.hpp>
 #include "../engine/types/MenuButton.h"
+#include "../engine/util/Camera.h"
 #include "../Globals.h"
 
 bool firstClickMenu = true;

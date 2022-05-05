@@ -3,7 +3,6 @@
 #include "../Globals.h"
 #include "../engine/types/Object.h"
 #include "../engine/util/Camera.h"
-#include "../engine/util/FileIO.h"
 
 void processEditorInput(GLFWwindow* window, float delta, short& editorBlockType, Object currentOb);
 void mouseEditHover(GLFWwindow* window, int screenHeight, Object& currentOb, short blockType);
@@ -56,7 +55,7 @@ void processEditorInput(GLFWwindow* window, float delta, short& editorBlockType,
         std::cout << "enter" << std::endl;
         std::cin >> name;
         std::cout << std::endl;
-        writeObjectToFile(name, currentOb);
+        currentOb.writeObjectToFile(name);
     }
 
     //when holding control, mouse controls cursor instead of camera

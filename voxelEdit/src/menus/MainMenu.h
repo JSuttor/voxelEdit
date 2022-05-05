@@ -1,5 +1,5 @@
 #pragma once
-#include <GLFW/glfw3.h>
+
 #include <windows.h>
 #include <math.h>
 #include <gl/GLU.h>
@@ -7,7 +7,6 @@
 #include "MenuControls.h"
 #include "../engine/types/MenuButton.h"
 #include "../Globals.h"
-#include "../engine/util/FileIO.h"
 #define mainButtonNum 2
 
 void mainMenuLoop(GLFWwindow* window);
@@ -49,12 +48,12 @@ void initMainMenu() {
     mainButtonArr[0].position = glm::vec3(-18, 0.0, -25);
     mainButtonArr[0].clickable = true;
     mainButtonArr[0].func = *editorMenuButtonClick;
-    getObjectFromFile(0, "Assets/MenuButtons/EditorButton.oof", mainButtonArr[0].buttonObject);
+    mainButtonArr[0].buttonObject.getObjectFromFile("Assets/MenuButtons/EditorButton.oof");
 
     mainButtonArr[1].position = glm::vec3(-18, -8.0, -25);
     mainButtonArr[1].clickable = true;
     mainButtonArr[1].func = *exitButtonClick;
-    getObjectFromFile(0, "Assets/MenuButtons/ExitButton.oof", mainButtonArr[1].buttonObject);
+    mainButtonArr[1].buttonObject.getObjectFromFile("Assets/MenuButtons/ExitButton.oof");
 }
 
 void editorMenuButtonClick(GLFWwindow* window) {

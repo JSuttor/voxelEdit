@@ -29,12 +29,7 @@ public:
     float pitch = 0.0f;
     float lastX = 400, lastY = 300;
 
-    void changeCamera() {
-        //move camera position and direction based on current variables
-        gluLookAt(cameraPos.x, cameraPos.y, cameraPos.z,
-            cameraPos.x + cameraFront.x, cameraPos.y + cameraFront.y, cameraPos.z + cameraFront.z,
-            cameraUp.x, cameraUp.y, cameraUp.z);
-    }
+    void changeCamera();
 
     static void genericMouseCallback(GLFWwindow* window, double xpos, double ypos) {};
 };
