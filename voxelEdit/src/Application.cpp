@@ -3,7 +3,6 @@
 #include <math.h>
 #include <gl/GLU.h>
 #include <glm/glm.hpp>
-#include "Globals.h"
 #include "menus/MainMenu.h"
 #include "menus/EditorMenu.h"
 #include "editor/Editor.h"
@@ -60,6 +59,8 @@ int main(void)
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
+
+        std::string gameState = getGameState();
 
         //for each state, enter corresponding loop
         if (gameState == "main_menu") {
